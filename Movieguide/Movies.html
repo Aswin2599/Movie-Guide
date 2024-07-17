@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>movie Guide</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+</head>
+<style>
+	
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container img{
+        height: 300px;
+    }
+	#inj{
+		height:500px;
+	}
+	#menu,#gmenu{
+		transition: all 0.3s ease-in-out;
+	}
+
+	#menu:hover #list,#sub-dropdown{
+		display: block;
+	}
+	#gmenu:hover #glist,#sub-dropdown{
+		display: block;
+	}
+
+	#sub-dropdown-menu a,#movlist a{
+		color: #000;
+
+	}
+	#menu:hover #sub-dropdown{
+		display: block;
+		transition: all 0.5s ease-in-out;
+	}
+	#sub-dropdown:hover #sub-dropdown-menu{
+		display: block;
+	}
+	#page
+	{
+		display: inline;
+	}
+	.footer
+	{
+		margin-top:2780px;
+		width:100%;
+		height:280px;
+		background-color: black;
+	}
+	.fa {
+  font-size: 18px;
+  padding:15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 14px;
+  border-radius:50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+#r1{
+	width: 100%;
+	height: auto;
+}
+.wrapper{
+	max-width: 500px;
+	width: 100%;
+	background: #fff;
+	margin: 30px auto;
+	
+  }
+  
+  .wrapper .title{
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 25px;
+	color: #fec107;
+	text-transform: uppercase;
+	text-align: center;
+  }
+  
+  .wrapper .form{
+	width: 100%;
+  }
+  
+  .wrapper .form .inputfield{
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+  }
+  
+  .wrapper .form .inputfield label{
+	 width: 200px;
+	 color: #757575;
+	 margin-right: 10px;
+	font-size: 14px;
+  }
+  
+  .wrapper .form .inputfield .input,
+  .wrapper .form .inputfield .textarea{
+	width: 100%;
+	outline: none;
+	border: 1px solid #d5dbd9;
+	font-size: 15px;
+	padding: 8px 10px;
+	border-radius: 3px;
+	transition: all 0.3s ease;
+  }
+  
+  .wrapper .form .inputfield .textarea{
+	width: 100%;
+	height: 125px;
+	resize: none;
+  }
+  
+  .wrapper .form .inputfield .custom_select{
+	position: relative;
+	width: 100%;
+	height: 37px;
+  }
+  
+  .wrapper .form .inputfield .custom_select:before{
+	content: "";
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	border: 8px solid;
+	border-color: #d5dbd9 transparent transparent transparent;
+	pointer-events: none;
+  }
+  
+  .wrapper .form .inputfield .custom_select select{
+	-webkit-appearance: none;
+	-moz-appearance:   none;
+	appearance:        none;
+	outline: none;
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	padding: 8px 10px;
+	font-size: 15px;
+	border: 1px solid #d5dbd9;
+	border-radius: 3px;
+  }
+  
+  
+  .wrapper .form .inputfield .input:focus,
+  .wrapper .form .inputfield .textarea:focus,
+  .wrapper .form .inputfield .custom_select select:focus{
+	border: 1px solid #fec107;
+  }
+  
+  .wrapper .form .inputfield p{
+	 font-size: 14px;
+	 color: #757575;
+  }
+  .wrapper .form .inputfield .check{
+	width: 15px;
+	height: 15px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+  }
+  .wrapper .form .inputfield .check input[type="checkbox"]{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+  }
+  .wrapper .form .inputfield .check .checkmark{
+	width: 15px;
+	height: 15px;
+	border: 1px solid #fec107;
+	display: block;
+	position: relative;
+  }
+  .wrapper .form .inputfield .check .checkmark:before{
+	content: "";
+	position: absolute;
+	top: 1px;
+	left: 2px;
+	width: 5px;
+	height: 2px;
+	border: 2px solid;
+	border-color: transparent transparent #fff #fff;
+	transform: rotate(-45deg);
+	display: none;
+  }
+  .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
+	background: #fec107;
+  }
+  
+  .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+	display: block;
+  }
+  
+  .wrapper .form .inputfield .btn{
+	width: 100%;
+	 padding: 8px 10px;
+	font-size: 15px; 
+	border: 0px;
+	background:  #fec107;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 3px;
+	outline: none;
+  }
+  
+  .wrapper .form .inputfield .btn:hover{
+	background: #ffd658;
+  }
+  
+  .wrapper .form .inputfield:last-child{
+	margin-bottom: 0;
+  }
+  
+  @media (max-width:420px) {
+	.wrapper .form .inputfield{
+	  flex-direction: column;
+	  align-items: flex-start;
+	}
+	.wrapper .form .inputfield label{
+	  margin-bottom: 5px;
+	}
+	.wrapper .form .inputfield.terms{
+	  flex-direction: row;
+	}
+  }
+  #login_form
+  {
+		display:block;
+  }
+  #sigup_form
+  {
+	  display:block;
+  }
+  #useraccount{
+	  display: none;
+  }
+
+
+  .dropbtn {
+	cursor: pointer;
+  }
+  
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	margin-top:80px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	margin-right:180px;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	align-items: center;
+	text-decoration: none;
+	display:flex;
+	font-size:15px;
+  }
+ 	
+  .dropdown-content a:hover{
+	  color:grey;
+  }
+ 
+  .show {display: block;}
+
+  .heart
+{
+	float: right;
+	margin-top: -10px;
+}
+.cp
+{
+	text-align: center;
+	background-color: black;
+	color: whitesmoke;
+}
+
+</style>
+<body>
+	<div>
+	<nav class="navbar navbar-inverse" style="height:80px;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				
+			</div>
+			<ul class="nav navbar-nav" style="margin-top:15px;font-size:18px;">
+				<li id="menu" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+				  <ul id="list"  class="dropdown-menu">
+					<li  id="sub-dropdown" class="dropdown"><a href="#">Movies<span class="glyphicon glyphicon-chevron-right" style="margin-left:70px;"></span></a>
+						<ul id="sub-dropdown-menu" style="margin-left:162px;margin-top:-32px;" class="dropdown-menu">
+							<li><a href="#" onclick="trend(0)">Trending Movies</a></li>
+							<li><a href="#" onclick="nowplaying(0)">Now Playing</a></li>
+							<li><a href="#" onclick="toprated(0)" >Top Rated</a></li>
+							<li><a href="#" onclick="upcoming(0)">Up coming</a></li>
+							<li><a href="#" onclick="popular(0)">Popular</a></li>
+						</ul>
+					</li>
+					<li  id="sub-dropdown" class="dropdown"><a href="#">TV Shows<span class="glyphicon glyphicon-chevron-right" style="margin-left:50px;"></span></a>
+						<ul id="sub-dropdown-menu" style="margin-left:166px;margin-top:-32px;" class="dropdown-menu">
+							<li><a href="#" onclick="trendtv(0)">Trending</a></li>
+							<li><a href="#" onclick="populartv(0)" >Popular</a></li>
+							<li><a href="#" onclick="topratedtv(0)">Top Rated</a></li>
+							<li><a href="#" onclick="onairtv(0)">On Air Today</a></li>
+						</ul>
+					</li>
+					<!--<li><a href="#">Awards and Events</a></li>-->
+				  </ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav" style="margin-top:15px;font-size:18px;">
+				<li id="gmenu" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Genre <span class="caret"></span></a>
+				  <ul class="dropdown-menu" id="glist">
+					<li><a href="#" onclick="horror(27,0)">Horror</a></li>
+					<li><a href="#" onclick="horror(35,0)">Comedy</a></li>
+					<li><a href="#" onclick="horror(28,0)">Action</a></li>
+					<li><a href="#" onclick="horror(53,0)">Thriller</a></li>
+					<li><a href="#" onclick="horror(878,0)">Sci-fi</a></li>
+					<li><a href="#" onclick="horror(12,0)">Adventure</a></li>
+					<li><a href="#" onclick="horror(16,0)">Animation</a></li>
+					<li><a href="#" onclick="horror(80,0)">Crime</a></li>
+					<li><a href="#" onclick="horror(10749,0)">Romance</a></li>
+					<li><a href="#" onclick="horror(18,0)">Drama</a></li>
+					<li><a href="#" onclick="horror(10751,0)">Family</a></li>
+					<li><a href="#" onclick="horror(14,0)">Fantasy</a></li>
+					<!--<li><a href="#" onclick="horror(10402)">Music</a></li>-->
+				  </ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav" style="margin-top:15px;font-size:18px;">
+				<li id="gmenu" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="show()">Wishlist</a></li>li>
+			</ul>
+
+		<br>
+		<p id="top"></p>
+		<div class="container">
+			<div id="trendmovies">
+				<h1 id="present"></h1><br>
+				<div class="container" id="k">
+
+			    </div>
+			</div>
+		</div>
+		<br><br>
+		<hr>
+		<div class="container">
+			<div class="col-md-6">
+				<a href="#top" class="btn btn-info" role="button" onclick="back()">BACK</a>
+			</div>
+			<div class="col-md-5">
+				<h4>Page:<div id="page">1</div></h4>
+			</div>
+			<div class="col-md-1">
+				<a href="#top" class="btn btn-info" role="button" onclick="next()">NEXT</a>
+			</div>
+		</div>
+		<br><br>
+	</nav>
+	</div>
+
+	
+	
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script>
+		var key="934c3f520e773f13f473662d5ec50c84";
+		var trendingurl="https://api.themoviedb.org/3/trending/all/day?api_key=934c3f520e773f13f473662d5ec50c84";
+		var nowplayingurl="https://api.themoviedb.org/3/movie/now_playing?api_key=934c3f520e773f13f473662d5ec50c84";
+		var popularurl="https://api.themoviedb.org/3/movie/popular?api_key=934c3f520e773f13f473662d5ec50c84";
+        var topratedurl='https://api.themoviedb.org/3/movie/top_rated?api_key=934c3f520e773f13f473662d5ec50c84';
+		var imageurl='https://image.tmdb.org/t/p/w200';
+        var latesturl='https://api.themoviedb.org/3/movie/latest?api_key=934c3f520e773f13f473662d5ec50c84';
+		var findurl='https://api.themoviedb.org/3/search/movie?api_key=934c3f520e773f13f473662d5ec50c84&query=';
+        var upcomingurl='https://api.themoviedb.org/3/movie/upcoming?api_key=934c3f520e773f13f473662d5ec50c84';
+		var generburl='https://api.themoviedb.org/3/genre/';
+		var genereurl='/movies?api_key=934c3f520e773f13f473662d5ec50c84';
+		var trendtvurl='https://api.themoviedb.org/3/trending/tv/day?api_key=934c3f520e773f13f473662d5ec50c84';
+		var populartvurl='https://api.themoviedb.org/3/tv/popular?api_key=934c3f520e773f13f473662d5ec50c84';
+		var topratedtvurl='https://api.themoviedb.org/3/tv/top_rated?api_key=934c3f520e773f13f473662d5ec50c84';
+		var onairtodayurl='https://api.themoviedb.org/3/tv/airing_today?api_key=934c3f520e773f13f473662d5ec50c84';
+		var searchurl="https://api.themoviedb.org/3/search/movie?api_key=934c3f520e773f13f473662d5ec50c84&query=";
+		var baseurl='https://api.themoviedb.org/3/movie/';
+		var basetvurl='https://api.themoviedb.org/3/tv/';
+		var nxt=1;
+		var ps=1;
+		var gg;
+		var lng=0;
+
+		// var user={name:'dharantej',email:'veeraballidharantej@gmail.com',favourite:[]};
+		// user.favourite.push(1523);
+		// console.log(user);
+
+		// english -en
+		// russian -ru
+		// japanese -ja
+		// korean -kr
+		// kannada -kn
+		// arabic -ar
+		// hindi -hi
+		// telugu-te
+		// malayalam-ml
+		// spanish-es
+		// tamil-ta
+		function show()
+		{
+			console.log("dharan");//
+
+			$('#k').html("will show later");
+		}
+		function favourite(id)
+		{
+			$('.h'+id).css('color','red');
+			console.log(id);
+		}
+		
+		function back()
+		{
+			nxt--;
+			if(nxt==0)
+			{
+				nxt=1;
+			}
+			$("#page").text(nxt);
+			if(ps==1)
+			nowplaying(1);
+			else if(ps==2)
+			upcoming(1);
+			else if(ps==3)
+			toprated(1);
+			else if(ps==4)
+			popular(1);
+			else if(ps==5)
+			trend(1);
+			else if(ps==6)
+			trendtv(1);
+			else if(ps==7)
+			populartv(1);
+			else if(ps==8)
+			topratedtv(1);
+			else if(ps==9)
+			onairtv(1);
+			else if(ps==10)
+			searchmovie(1);
+			else
+			horror(gg,1);
+
+		}
+
+		function next()
+		{
+			nxt++;
+			$("#page").text(nxt);
+			if(ps==1)
+			nowplaying(1);
+			else if(ps==2)
+			upcoming(1);
+			else if(ps==3)
+			toprated(1);
+			else if(ps==4)
+			popular(1);
+			else if(ps==5)
+			trend(1);
+			else if(ps==6)
+			trendtv(1);
+			else if(ps==7)
+			populartv(1);
+			else if(ps==8)
+			topratedtv(1);
+			else if(ps==9)
+			onairtv(1);
+			else if(ps==10)
+			searchmovie(1);
+			else
+			horror(gg,1);
+
+		}
+
+		function searchmovie(a)
+		{
+			let srh=document.getElementById("mvname").value;
+			console.log(srh);
+			ps=10;
+			document.getElementById("present").innerHTML=srh;
+			if(a==0)
+			{
+			nxt=1;
+			$("#page").text(nxt);
+			}
+			$('#k').html(' ');
+				var xhr=new XMLHttpRequest();
+				var sendurl=searchurl+srh+"&page="+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				var f=0;
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+		}
+
+		function onairtv(a)
+		{
+			var j=1;
+			if(a==0)
+			nxt=1;
+            $('#k').html(' ');
+			ps=9;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Airing Today";
+				var xhr=new XMLHttpRequest();
+				var sendurl=onairtodayurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/tv/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.first_air_date+'<br><b>Title: </b>'+temp.name +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+		}
+
+
+		function topratedtv(a)
+		{
+			var j=1;
+			if(a==0)
+			nxt=1;
+            $('#k').html(' ');
+			ps=8;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Top Rated";
+				var xhr=new XMLHttpRequest();
+				var sendurl=topratedtvurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/tv/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.first_air_date+'<br><b>Title: </b>'+temp.name +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+		}
+
+		
+		function populartv(a)
+		{
+			var j=1;
+			if(a==0)
+			nxt=1;
+            $('#k').html(' ');
+			ps=7;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Popular";
+				var xhr=new XMLHttpRequest();
+				var sendurl=populartvurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/tv/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.first_air_date+'<br><b>Title: </b>'+temp.name +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+		}
+
+
+		function trendtv(a)
+		{
+			var j=1;
+			if(a==0)
+			nxt=1;
+            $('#k').html(' ');
+			ps=6;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Trending";
+				var xhr=new XMLHttpRequest();
+				var sendurl=trendtvurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/tv/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.first_air_date+'<br><b>Title: </b>'+temp.name +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+		}
+
+        
+        function upcoming(a)
+        {
+			var j=1;
+			if(a==0)
+			nxt=1;
+            $('#k').html(' ');
+			ps=2;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Upcoming";
+
+				var xhr=new XMLHttpRequest();
+				var sendurl=upcomingurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+			
+        }
+
+
+
+        function toprated(a)
+        {
+			var j=1;
+            $('#k').html(' ');
+			ps=3;
+			if(a==0)
+			nxt=1;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Top Rated";
+			
+				var xhr=new XMLHttpRequest();
+				var sendurl=topratedurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+				
+        }
+
+
+        function popular(a)
+        {
+			var j=1;
+            $('#k').html(' ');
+			ps=4;
+			if(a==0)
+			nxt=1;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Popular";
+			
+				var xhr=new XMLHttpRequest();
+				var sendurl=popularurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+			
+        }
+
+        function trend(a)
+        {
+			var j=1;
+            $('#k').html(' ');
+			ps=5;
+			if(a==0)
+			nxt=1;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Trending";
+			
+				var xhr=new XMLHttpRequest();
+				var sendurl=trendingurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+				
+        }
+        
+		
+        function nowplaying(a)
+        {
+			var j=1;
+			if(a==0)
+			nxt=1;
+            $('#k').html(' ');
+			ps=1;
+			if(a==0)
+			$("#page").text(nxt);
+			document.getElementById("present").innerHTML="Now Playing";
+				var xhr=new XMLHttpRequest();
+				var sendurl=nowplayingurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+				
+        }
+        nowplaying(0);
+		//28 = action
+  		//12 = adventure
+  		//16 = animation
+  		//35 = comedy
+  		//80 = crime
+  		//18 = drama
+  		//10751 = family
+  		//14 = fantasy
+  		//36 = history
+  		//27 = horror
+  		//10402 = music
+  		//10749 = romance
+  		//878 = science fiction
+  		//53 = thriller
+		function horror(genreid,a)
+		{
+			//var b="https://api.themoviedb.org/3/genre/movie/list?api_key=934c3f520e773f13f473662d5ec50c84&language=en-US";
+            let setids=new Set();
+                    $("#k").html('');
+                    $("#present").html(" ");
+					gg=genreid;
+                    if(genreid==27)
+					{
+						document.getElementById("present").innerHTML="Horror Movies";
+						ps=27;
+					}
+					else if(genreid==28)
+					{
+						document.getElementById("present").innerHTML="Action Movies";
+						ps=28;
+					}
+					else if(genreid==12)
+					{
+						document.getElementById("present").innerHTML="Adventure Movies";
+						ps=12;
+					}
+					else if(genreid==16)
+					{
+						document.getElementById("present").innerHTML="Animation Movies";
+						ps=16;
+					}
+					else if(genreid==35)
+					{
+						document.getElementById("present").innerHTML="Comedy Movies";
+						ps=35;
+					}
+					else if(genreid==80)
+					{
+						document.getElementById("present").innerHTML="Crime Movies";
+						ps=80;
+					}
+					else if(genreid==18)
+					{
+						document.getElementById("present").innerHTML="Drama Movies";
+						ps=18;
+					}
+					else if(genreid==10751)
+					{
+						document.getElementById("present").innerHTML="Family Movies";
+						ps=10751;
+					}
+					else if(genreid==14)
+					{
+						document.getElementById("present").innerHTML="Fantasy Movies";
+						ps=14;
+					}
+					else if(genreid==36)
+					{
+						document.getElementById("present").innerHTML="History Movies";
+						ps=36;
+					}
+					else if(genreid==10402)
+					{
+						document.getElementById("present").innerHTML="Music Movies";
+						ps=10402;
+					}
+					else if(genreid==10749)
+					{
+						document.getElementById("present").innerHTML="Romance Movies";
+						ps=10749;
+					}
+					else if(genreid==878)
+					{
+						document.getElementById("present").innerHTML="Sci-fi Movies";
+						ps=878;
+					}
+					else if(genreid==53)
+                    {
+						document.getElementById("present").innerHTML="Thriller Movies";
+						ps=53;
+					}
+                    var j=1,k;
+					if(a==0)
+					{
+						nxt=1;
+						$("#page").text(nxt);
+					}
+
+					var xhr=new XMLHttpRequest();
+				var sendurl=generburl+genreid+genereurl+'&page='+nxt;
+				xhr.open('GET',sendurl,true);
+				xhr.send();
+				xhr.onreadystatechange=function()
+				{
+					if(this.readyState==4&&this.status==200)
+					{
+                        // if(this.responseText==null)
+                        // break;
+						var obj=JSON.parse(this.responseText);
+						var m="";
+						
+                        
+						for(let i=0;i<obj.results.length;i++)
+						{
+							
+							m+=obj.results[i].poster_path+'<br>';
+							//yurl=youtubelink(baseurl+obj.results[i].id+'?api_key='+key+'&append_to_response=videos');
+							//console.log(yurl);
+							// txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+obj.results[i].poster_path+'">';
+							// txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+obj.results[i].release_date+'<br><b>Title: </b>'+obj.results[i].title +'<br><b>Rating: </b>'+obj.results[i].vote_average ;
+							var xhr1=new XMLHttpRequest();
+							t1='ita';
+                			xhr1.open('GET','https://api.themoviedb.org/3/movie/'+obj.results[i].id+'/videos?api_key='+key,true);
+                			xhr1.send();
+                			xhr1.onreadystatechange=function()
+                			{
+                    			if(this.readyState==4 && this.status==200)
+                    			{
+									var txt='';
+									console.log(obj.results);
+									console.log(i);
+                        			var temp=obj.results[i];
+									//console.log(obj.results);
+									console.log(temp);
+                        			var objm=JSON.parse(this.responseText);
+									var ylink='https://www.youtube.com';
+									
+									if(objm.results.length>0)
+                        			ylink='https://www.youtube.com/watch?v='+objm.results[0].key;
+									// console.log(ylink);
+									txt+='<div class="col-md-3" id="inj"><div class="thumbnail"><img  src="'+imageurl+temp.poster_path+'">';
+									txt+='<div class="caption" style="margin-left:10px;"><b>Release-date: </b>'+temp.release_date+'<br><b>Title: </b>'+temp.title +'<br><b>Rating: </b>'+temp.vote_average ;
+                        			t1='<div class="ylink"><a href="'+ylink+'" target="_blank"><i class="material-icons" style="font-size:40px;color:#1b2021">play_circle_filled</i></a><i style="font-size:24px" class="heart fa h'+obj.results[i].id+'" onclick="favourite('+obj.results[i].id+')">&#xf08a;</i></div>';
+                        			txt+=t1;
+									txt+='</div></div></div>';
+									console.log(t1);
+									$('#k').append(txt);
+                    			}
+                			}
+							
+							//console.log(t1);
+							//i++;
+						}
+					}
+					
+				}
+          
+        }
+		
+
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
